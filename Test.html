@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Score Checker</title>
+
+      <style>
+::selection {
+  background: greenyellow;
+  color: #000;
+}
+</style>
+
+    </head>
+
+<h1>Kindly log in</h1>
+
+<p>User Name:
+    <input type="text">
+</p>
+
+<p>pass Word: 
+    <input 
+  type="text" 
+  id="passWord"
+  inputmode="numeric"
+  maxlength="17">
+</p>
+
+<button onclick="logIn()">Log In</button>
+
+</html>
+
+<script>
+    const input = document.getElementById("passWord");
+    
+    input.addEventListener("input", function () {
+      // Remove everything except digits
+      let value = input.value.replace(/\D/g, "");
+    
+      // Limit to 13 digits
+      value = value.substring(0, 13);
+    
+      // Apply grouping: 1 4 5 2 1
+      let formatted = "";
+      if (value.length > 0) formatted += value.substring(0, 1);
+      if (value.length > 1) formatted += " " + value.substring(1, 5);
+      if (value.length > 5) formatted += " " + value.substring(5, 10);
+      if (value.length > 10) formatted += " " + value.substring(10, 12);
+      if (value.length > 12) formatted += " " + value.substring(12, 13);
+    
+      input.value = formatted;
+    });
+
+    function logIn() {
+  alert("webSite failed to log in (!)");
+}
+
+document.addEventListener("contextmenu", function (event) {
+  event.preventDefault();
+});
+
+    </script>
+
