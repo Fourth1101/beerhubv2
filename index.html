@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Bracket</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <script src="scripts.js"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <h1>G7 Chess Tournament</h1>
+    <p>Made by drunk uncle</p>
+   </div>
+   <div class="bracket" id="bracket"><!-- Round 1 -->
+    <div class="round">
+     <div class="round-title">
+      ‎ 
+     </div>
+     <div class="match" data-round="1" data-match="1">
+      <div class="team" onclick="selectWinner(this)" data-team="team1"><span class="team-name">Ducky IV</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="team2"><span class="team-name">Ducky V</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+     <div class="match" data-round="1" data-match="2">
+      <div class="team" onclick="selectWinner(this)" data-team="team3"><span class="team-name">Dog</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="team4"><span class="team-name">Baby</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+     <div class="match" data-round="1" data-match="3">
+      <div class="team" onclick="selectWinner(this)" data-team="team5"><span class="team-name">Cat</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="team6"><span class="team-name">Brother</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+     <div class="match" data-round="1" data-match="4">
+      <div class="team" onclick="selectWinner(this)" data-team="team7"><span class="team-name">drunk uncle</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="team8"><span class="team-name">Mikey Christopher Jordan</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+    </div><!-- Semifinals -->
+    <div class="round">
+     <div class="round-title">
+      Semifinals
+     </div>
+     <div class="match" data-round="2" data-match="1">
+      <div class="team" onclick="selectWinner(this)" data-team="semi1"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="semi2"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+     <div class="match" data-round="2" data-match="2">
+      <div class="team" onclick="selectWinner(this)" data-team="semi3"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="semi4"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+    </div><!-- Finals -->
+    <div class="round">
+     <div class="round-title">
+      Finals
+     </div>
+     <div class="match" data-round="3" data-match="1">
+      <div class="team" onclick="selectWinner(this)" data-team="final1"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="team" onclick="selectWinner(this)" data-team="final2"><span class="team-name">???</span> <span class="team-score">0</span>
+      </div>
+      <div class="connector"></div>
+     </div>
+    </div><!-- Champion -->
+    <div class="round">
+     <div class="round-title">
+      🏆 Champion
+     </div>
+     <div class="match" data-round="4" data-match="1">
+      <div class="team champion" data-team="champion"><span class="team-name">???</span> <span class="team-score">👑</span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="controls"><button class="btn" onclick="toggleEditMode()" title="Edit Teams">Rename</button> <button class="btn secondary" onclick="resetBracket()" title="Reset">Reset</button> <button class="btn" onclick="toggleInfo()" title="Information" style="background: #9f7aea;">Details</button>
+    <div class="info-menu" id="infoMenu">
+     <h3>Tutorial</h3>
+     <p><strong>Select Winners:</strong> Click on a team name to advance them to the next round.</p>
+     <p><strong>Rename and Edit Teams:</strong> Click the button to edit player names and elo, then click again to save.</p>
+     <p><strong>Reset:</strong> Click the reset button to clear all progress.</p>
+     <h3 style="margin-top: 15px;">Credits</h3>
+     <ul>
+      <li>Fourth - Builded the website</li>
+      <li>Drunk Uncle - Best beerHub customer</li>
+      <li>Mikey Christopher Jordan - Test Dummy</li>
+      <li>R Ryu - GD Playtester</li>
+     </ul><button class="menu-button" onclick="toggleLinks()">Multimedia</button> <button class="menu-button" onclick="toggleNotepad()" style="background: #ed64a6;">Notepad</button>
+    </div>
+    <div class="links-menu" id="linksMenu">
+     <h3>Multimedia</h3><a href="https://chess.com" target="_blank" rel="noopener noreferrer">Chess</a> <a href="https://fourth1101.github.io/beerhubv1/New%20Text%20Document.html" target="_blank" rel="noopener noreferrer">beerHub</a> <a href="Test.html" target="_blank" rel="noopener noreferrer">log In</a> <a href="https://pickerwheel.com/" target="_blank" rel="noopener noreferrer">Spinner</a>
+    </div>
+    <div class="notepad-menu" id="notepadMenu">
+     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <h3 style="margin: 0;">Notepads</h3><button onclick="toggleNotepad()" style="background: #e2e8f0; border: none; color: #4a5568; font-size: 1.2rem; cursor: pointer; width: 30px; height: 30px; border-radius: 6px; display: flex; align-items: center; justify-content: center; transition: all 0.2s ease;" onmouseover="this.style.background='#cbd5e0'" onmouseout="this.style.background='#e2e8f0'">✕</button>
+     </div>
+     <div class="notepad-selector"><button class="notepad-tab active" onclick="switchNotepad(1)">Round 1</button> <button class="notepad-tab" onclick="switchNotepad(2)">Round 2</button> <button class="notepad-tab" onclick="switchNotepad(3)">Round 3</button> <button class="notepad-tab" onclick="switchNotepad(4)">Round 4</button> <button class="notepad-tab" onclick="switchNotepad(5)">Round 5</button> <button class="notepad-tab" onclick="switchNotepad(6)">Round 6</button> <button class="notepad-tab" onclick="switchNotepad(7)">Round 7</button>
+     </div>
+     <div class="notepad-content"><textarea class="notepad-textarea" id="notepadText" placeholder="Write your notes here..."></textarea> <button class="notepad-save-btn" onclick="saveNotepad()">Save Notepad</button>
+     </div>
+    </div>
+   </div>
+  </div>
+ 
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d79021dd627ff96',t:'MTc3MjcxMjUzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
